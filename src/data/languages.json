@@ -1,0 +1,72 @@
+{
+  "list": [
+    {
+      "language": "HTML",
+      "icon": ["fab", "html5"]
+    },
+    {
+      "language": "CSS",
+      "icon": ["fab", "css3-alt"]
+    },
+    {
+      "language": "Javascript",
+      "icon": ["fab", "square-js"]
+    },
+    {
+      "language": "PHP",
+      "icon": ["fab", "php"]
+    },
+    {
+      "language": "Java",
+      "icon": ["fab", "java"]
+    },
+    {
+      "language": "Python",
+      "icon": ["fab", "python"]
+    },
+    {
+      "language": "Laravel",
+      "icon": ["fab", "laravel"]
+    },
+    {
+      "language": "Node.js",
+      "icon": ["fab", "node-js"]
+    },
+    {
+      "language": "Vue.js",
+      "icon": ["fab", "vuejs"]
+    },
+    {
+      "language": "React",
+      "icon": ["fab", "react"]
+    },
+    {
+      "language": "Tailwind CSS",
+      "icon": ["fab", "css3-alt"]
+    },
+    {
+      "language": "Bootstrap",
+      "icon": ["fab", "bootstrap"]
+    },
+    {
+      "language": "Generative AI",
+      "icon": ["fab", "openai"]
+    },
+    {
+      "language": "Git",
+      "icon": ["fab", "git-alt"]
+    },
+    {
+      "language": "Figma",
+      "icon": ["fab", "figma"]
+    },
+    {
+      "language": "SQL",
+      "icon": ["fab", "microsoft"]
+    },
+    {
+      "language": "Firebase",
+      "icon": ["fab", "gripfire"]
+    }
+  ]
+}

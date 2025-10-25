@@ -1,0 +1,69 @@
+{
+    "list": [
+        {
+            "company": "Qasr Al Zumurud",
+            "position": "Fullstack Software Developer",
+            "priority": 1,
+            "joinYear": "2024",
+            "joinMonth": "Oct",
+            "leaveYear": null,
+            "leaveMonth": null,
+            "projects": [
+                {
+                    "name": "Website",
+                    "feats": [
+                        {
+                            "paragraph": "I was responsible for compiling all the content provided, to make a website for the company. Currently, I’m responsible for maintaining the website based on instructions provided by the company"
+                        },
+                        {
+                            "paragraph": "Achieved a fully functional website with all the details a website should contain"
+                        }
+                    ],
+                    "languages": [
+                        {
+                            "language": "WordPress"
+                        },
+                        {
+                            "language": "Hostinger"
+                        }
+                    ],
+                    "link": null
+                },
+                {
+                    "name": "Company Documents Manager",
+                    "feats": [
+                        {
+                            "paragraph": "I was responsible for building a complete Document management system for performing CRUD operations for Quotations, Invoices and Expense Receipts. Each document was then required to be converted to PDF based on data input."
+                        },
+                        {
+                            "paragraph": "Achieved 100% transformation towards online document storage and management for the company. All documents, since April 2025 have been stored in the developed Document management system."
+                        }
+                    ],
+                    "languages": [
+                        {
+                            "language": "Vue.js"
+                        },
+                        {
+                            "language": "Javascript"
+                        },
+                        {
+                            "language": "Tailwind"
+                        },
+                        {
+                            "language": "Axios"
+                        },
+                        {
+                            "language": "Supabase"
+                        },
+                        {
+                            "language": "Pinia"
+                        },
+                        {
+                            "language": "HTML2PDF.js"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

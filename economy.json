@@ -1,0 +1,37 @@
+{
+    "economy": {
+        "currencies": [
+            {}
+        ],
+        "effects": [
+            {
+                "id": 0,
+                "name": "effect-name"
+
+            }
+        ],
+        "entities": [
+            {
+                "uuid": "unique-identifier",
+                "name": "Randomized/Defined Names",
+                "type": "player/mobEntity",
+                "stats": {
+                    "effects": [
+                        {
+                            "currencyId": 0,
+                            "boosts": 0.0,
+                            "timer": 60
+                        }
+                    ]
+                }
+            }
+        ],
+        "event": [
+            {
+                "id": 0,
+                "name": "event-name",
+                "type": "upgradable/fixed"
+            }
+        ]
+    }
+}
