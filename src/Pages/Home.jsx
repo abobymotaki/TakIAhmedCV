@@ -5,15 +5,16 @@ import AdvancedHome from '../components/AdvancedHome';
 
 function Home() {
     const { style } = useStyle();
+    const chaos = 4000;
 
     return (
         <div className='min-w-100 flex'>
             { style == 'advanced' ? 
                 <SmokeyCursor 
-                    curl={1}
-                    splatForce={4}
-                    densityDissipation={10}
-                    colorUpdateSpeed={2}
+                    curl={10}
+                    splatForce={chaos}
+                    densityDissipation={1.5}
+                    colorUpdateSpeed={4}
                     backgroundColor={{ r: 100, g: 0, b: 0 }}
                 /> :
                 ''
@@ -32,7 +33,7 @@ function Home() {
                     className={`max-w-screen lg:px-7 text-gray-100`}
                 />
                 : <AdvancedHome
-                    className={`max-w-0 overflow-hidden`}
+                    className={`max-w-0 overflow-hidden fixed right-0`}
                 />
             }
         </div>

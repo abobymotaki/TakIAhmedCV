@@ -4,8 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as brandIcons from '@fortawesome/free-brands-svg-icons';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'; // Fallback icon
 import experiences from '../data/experience.json';
+import qasrImage from '../assets/qasralzumurud.png';
+import invoiceImg from '../assets/invoiceManager.png';
 
-// Create a dynamic icon resolver function
+const imageMap = {
+  '/assets/qasralzumurud.png': qasrImage,
+  '/assets/invoiceManager.png': invoiceImg,
+};
+
 const getIcon = (iconArray) => {
   if (!Array.isArray(iconArray) || iconArray.length !== 2) {
     return faExclamationTriangle;
@@ -60,7 +66,7 @@ function BasicHome(props) {
             <div key={index} className=''>
                 <p className='italic'>
                     <span className='font-bold text-2xl'>{items.company}</span> -{' '}
-                    <span className='text-lg font-bold'>Full Stack Developer</span>
+                    <span className='text-lg font-bold'>{items.position}</span>
                 </p>
                 <p className='text-zinc-500 mb-4'>
                     {items.joinMonth} {items.joinYear} -{' '}
@@ -73,32 +79,48 @@ function BasicHome(props) {
                     {items.projects.map((project, projectIndex) => (
                         <div key={projectIndex} className='mb-2'>
                             <button
-                                onClick={() => toggleProject(projectIndex)}
-                                className={`-ml-3 w-full text-left font-bold text-zinc-600 flex flex-col items-center cursor-pointer py-2
-                                        ${openProjectIndex === projectIndex ? 'border px-3 rounded-lg' : 'px-3'}
+                                className={`lg:-ml-3 w-full text-left font-bold text-zinc-600 flex flex-col items-center py-2
+                                        ${openProjectIndex === projectIndex ? 'border px-3 rounded-lg shadow-md' : 'px-3'}
                                     `}
                             >
-                                <div className='text-lg font-bold flex justify-between w-full -mt-1'>
+                                <div className='text-lg font-bold flex justify-between w-full -mt-1 cursor-pointer'
+                                    onClick={() => toggleProject(projectIndex)}
+                                >
                                     {project.name}
                                     <span>{openProjectIndex === projectIndex ? '▴' : '▾'}</span>
                                 </div>
                                 
-                                <div className={`${ openProjectIndex === projectIndex ? 'max-h-100' : 'max-h-0' } overflow-hidden transition-all ease-in-out duration-200 w-full text-md font-normal`}>
-                                    { project.feats.map((feat, index) => (
-                                        <div key={index} className='flex gap-x-2 mb-2'>
-                                            <span className=''>✱</span><span>{feat.paragraph}</span>
-                                        </div>
-                                    )) }
+                                <div className={`${ openProjectIndex === projectIndex ? 'max-h-250' : 'max-h-0' } overflow-auto transition-all ease-in-out duration-200 w-full text-md font-normal grid lg:grid-cols-2 gap-4 lg:mt-2`}>
+                                    <div className='lg:py-2 flex flex-col justify-between'>
+                                        <div className=''>
+                                            { project.feats.map((feat, index) => (
+                                                <div key={index} className='flex gap-x-2 py-2'>
+                                                    <span className=''>✱</span><span>{feat.paragraph}</span>
+                                                </div>
+                                            )) }
 
-                                    <div>
-                                        <span className='text-[14px] font-semibold'>Technologies Used</span>
-                                        <div className='flex gap-1'>
-                                            {
-                                                project.languages.map((language, index) => (
-                                                    <div className='px-4 p-1 border-1 w-fit rounded-md'>{language.language}</div>
-                                                ))
-                                            }
+                                            <div>
+                                                <span className='text-[14px] font-semibold'>Technologies Used</span>
+                                                <div className='flex gap-1 flex-wrap'>
+                                                    {
+                                                        project.languages.map((language, index) => (
+                                                            <div className='px-4 p-1 border-1 w-fit rounded-sm' key={index}>{language.language}</div>
+                                                        ))
+                                                    }
+                                                </div>
+                                            </div>
                                         </div>
+                                        {
+                                            project.link != null ? 
+                                            <p className='mt-4 cursor-pointer'>
+                                                <a href={project.link} className={`bg-black text-white block p-2 text-center rounded-sm`} rel="noopener noreferrer" target="_blank">Visit here</a>
+                                            </p> : 
+                                            null
+                                        }
+                                    </div>
+                                    <div className=''>
+                                        <img src={imageMap[project.image] || project.image} alt={project.name} 
+                                            className='rounded-md' />
                                     </div>
                                 </div>
                             </button>
@@ -149,7 +171,7 @@ function BasicHome(props) {
             </div>
             <div
                 className='min-w-100 lg:min-w-200 border-t-1 border-zinc-200 py-10
-                        grid lg:grid-cols-2 gap-4 px-5'
+                        grid gap-4 px-5'
                 id='FrameThree'
             >
                 <div className=''>
@@ -159,7 +181,7 @@ function BasicHome(props) {
                     </div>
                 </div>
             </div>
-            <div
+            {/* <div
                 className='min-w-100 lg:min-w-200 border-t-1 border-zinc-200 py-10
                         grid lg:grid-cols-2 gap-4 px-5'
                 id='FrameFour'
@@ -167,7 +189,7 @@ function BasicHome(props) {
                 <div>
                     <h1 className='text-xl font-bold mb-4'>Projects</h1>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -27,7 +27,8 @@
                             "language": "Hostinger"
                         }
                     ],
-                    "link": null
+                    "link": "https://qasralzumurud.com",
+                    "image": "/assets/qasralzumurud.png"
                 },
                 {
                     "name": "Company Documents Manager",
@@ -61,7 +62,9 @@
                         {
                             "language": "HTML2PDF.js"
                         }
-                    ]
+                    ],
+                    "link": null,
+                    "image": "/assets/invoiceManager.png"
                 }
             ]
         }

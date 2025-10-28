@@ -11,6 +11,8 @@ function Header() {
                 <div className="space-x-2 px-5">
                     <a className={style === 'basic' ? 'navButton-basic' : 'navButton-advanced'} href={`${ style == 'basic' ? '#FrameOne' : '#FrameOneAdvanced'}`}>Home</a>
                     <a className={style === 'basic' ? 'navButton-basic' : 'navButton-advanced'} href={`${ style == 'basic' ? '#FrameTwo' : '#FrameTwoAdvanced'}`}>About</a>
+                    <a className={style === 'basic' ? 'navButton-basic' : 'navButton-advanced'} href={`${ style == 'basic' ? '#FrameThree' : '#FrameThreeAdvanced'}`}>Experience</a>
+                    {/* <a className={style === 'basic' ? 'navButton-basic' : 'navButton-advanced'} href={`${ style == 'basic' ? '#FrameFour' : '#FrameFourAdvanced'}`}>Projects</a> */}
                 </div>
                 <div className="px-5">
                     <abbr title="A lot of people like simple designs, while others like Fancy. Switch the mode to your liking!">
