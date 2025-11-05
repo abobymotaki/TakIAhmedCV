@@ -183,7 +183,7 @@ function AdvancedHome(props) {
         transition-all ease-in-out duration-400 pt-10 bg-zinc-950
       `}
     >
-      <div className="w-full" id="FrameOneAdvanced">
+      <div className="min-w-100" id="FrameOneAdvanced">
         <div className="flex justify-center items-center w-full h-[calc(100vh-5vh)] flex-col">
           <div className="flex justify-center items-center flex-col z-[99] bg-zinc-950/40 p-15 lg:p-20 px-5 lg:px-25 backdrop-blur-sm border-white/20 hover:border-2 rounded-[45px_5px_45px_5px] transition-all ease-in-out duration-500">
             <span className="text-2xl lg:text-4xl mb-4">

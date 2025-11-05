@@ -8,7 +8,7 @@ function Home() {
     const chaos = 4000;
 
     return (
-        <div className='min-w-100 flex'>
+        <div className={`flex ${style == 'advanced' ? 'bg-zinc-950' : ''}`}>
             { style == 'advanced' ? 
                 <SmokeyCursor 
                     curl={10}

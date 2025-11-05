@@ -10,13 +10,13 @@ function MainContent() {
 
   return (
     <div
-      className={`flex items-center flex-col ${
+      className={`flex items-center flex-col border-3 border-black ${
         style === 'basic' ? '' : 'bg-zinc-950'
       }`}
     >
-      <div className="max-w-[1440px]">
+      <div className="max-w-[1440px] overflow-auto">
         <Router>
-          <Header className="z-100" />
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>

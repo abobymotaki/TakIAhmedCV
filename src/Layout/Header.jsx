@@ -4,7 +4,7 @@ function Header() {
     const { style, updateStyle } = useStyle();
 
     return (
-        <div className='fixed top-0 left-0 w-full z-1000 backdrop-blur-md'>
+        <div className='fixed top-0 left-0 w-full z-1000 backdrop-blur-md max-w-screen'>
             <div className={`flex justify-between items-center max-w-[1440px]
                 text-sm lg:text-md py-1 mx-auto
             `}>
