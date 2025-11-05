@@ -10,7 +10,7 @@ function MainContent() {
 
   return (
     <div
-      className={`flex items-center flex-col border-3 border-black ${
+      className={`flex items-center flex-col ${
         style === 'basic' ? '' : 'bg-zinc-950'
       }`}
     >

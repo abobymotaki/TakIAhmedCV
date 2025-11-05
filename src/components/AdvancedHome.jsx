@@ -183,12 +183,12 @@ function AdvancedHome(props) {
         transition-all ease-in-out duration-400 pt-10 bg-zinc-950
       `}
     >
-      <div className="min-w-100" id="FrameOneAdvanced">
-        <div className="flex justify-center items-center w-full h-[calc(100vh-5vh)] flex-col">
+      <div className="min-w-80 " id="FrameOneAdvanced">
+        <div className="flex justify-center items-center h-[calc(100vh-5vh)] flex-col">
           <div className="flex justify-center items-center flex-col z-[99] bg-zinc-950/40 p-15 lg:p-20 px-5 lg:px-25 backdrop-blur-sm border-white/20 hover:border-2 rounded-[45px_5px_45px_5px] transition-all ease-in-out duration-500">
-            <span className="text-2xl lg:text-4xl mb-4">
-              Hey, I am{" "}
-              <b className="text-3xl lg:text-5xl text-blue-500 ml-4">
+            <span className="text-xl lg:text-4xl mb-4">
+              Hey, I am 
+              <b className="text-2xl lg:text-5xl text-blue-500 ml-4">
                 Taki Ahmed
               </b>
             </span>
@@ -199,7 +199,7 @@ function AdvancedHome(props) {
         </div>
       </div>
       <div
-        className="border-t-[1px] border-zinc-800 px-5 lg:px-10 py-12 grid z-[100] w-auto min-w-100
+        className="min-w-80 border-t-[1px] border-zinc-800 px-5 lg:px-10 py-12 grid z-[100] w-auto
           grid-cols-1 lg:grid-cols-2 gap-4
         "
         id="FrameTwoAdvanced"
@@ -226,17 +226,17 @@ function AdvancedHome(props) {
         </div>
       </div>
       <div
-        className="min-w-100 lg:min-w-200 border-t-1 border-zinc-800 py-10
-                  grid gap-4 px-5 lg:px-10"
+        className="min-w-80 lg:min-w-200 border-t-1 border-zinc-800 py-10
+                  grid gap-4 px-3 lg:px-10"
         id="FrameThreeAdvanced"
       >
-        <div className="z-100 bg-zinc-950/40 backdrop-blur-md p-5 lg:px-10 rounded-xl">
+        <div className="z-100 bg-zinc-950/40 backdrop-blur-md p-5 px-3 lg:px-10 rounded-xl">
           <h1 className="text-xl font-bold mb-4 ">Experience</h1>
           <div className="">{experience}</div>
         </div>
       </div>
       {/* <div
-        className="min-w-100 lg:min-w-200 border-t-1 border-zinc-800 py-10
+        className="lg:min-w-200 border-t-1 border-zinc-800 py-10
                   grid lg:grid-cols-2 gap-4 px-5"
         id="FrameFourAdvanced"
       >

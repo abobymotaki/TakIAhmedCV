@@ -25,7 +25,7 @@ function Home() {
                     className={`max-w-screen lg:px-7`}
                 />
                 : <BasicHome
-                    className={`max-w-0 overflow-hidden`}
+                    className={`max-w-0 max-h-0 overflow-hidden`}
                 />
             }
             { style == 'advanced'
@@ -33,7 +33,7 @@ function Home() {
                     className={`max-w-screen lg:px-7 text-gray-100`}
                 />
                 : <AdvancedHome
-                    className={`max-w-0 overflow-hidden fixed right-0`}
+                    className={`max-w-0 max-h-0 overflow-hidden`}
                 />
             }
         </div>

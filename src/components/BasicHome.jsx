@@ -45,7 +45,7 @@ function BasicHome(props) {
                 <span className='text-sm'>{items.language}</span>
                 <FontAwesomeIcon 
                     icon={icon} 
-                    className='text-xl lg:text-2xl'
+                    className='lg:text-2xl'
                 />
             </div>
         );
@@ -134,31 +134,31 @@ function BasicHome(props) {
     return (
         <div
             className={`
-                w-full ${ props.className }
+                w-full ${ props.className } 
                 transition-all ease-in-out duration-400 pt-10
             `}
         >
             <div
-                className='min-w-100 lg:min-w-200'
+                className='min-w-80 lg:min-w-200'
                 id='FrameOne'
             >
                 <div className='flex justify-center items-center w-full h-[calc(100vh-5vh)] flex-col'>
-                    <span className='text-2xl lg:text-4xl mb-4'>
-                        Hey, I am <b className='text-3xl lg:text-5xl'>Taki Ahmed</b>
+                    <span className='text-xl lg:text-4xl mb-4'>
+                        Hey, I am <b className='text-2xl lg:text-5xl'>Taki Ahmed</b>
                     </span>
-                    <span className='text-xl'>
+                    <span className='text-lg'>
                         A Fullstack Website Developer
                     </span>
                 </div>
             </div>
             <div
-                className='min-w-100 lg:min-w-200 border-t-1 border-zinc-200 py-10
+                className='min-w-80 lg:min-w-200 border-t-1 border-zinc-200 py-10
                         grid lg:grid-cols-2 gap-4 px-5'
                 id='FrameTwo'
             >
                 <div>
                     <h1 className='text-xl font-bold mb-4'>About Me</h1>
-                    <p className='text-lg'>
+                    <p className='lg:text-lg'>
                         I am <b>Taki Ahmed</b>, an 18-year-old second-year Software Engineering student from Bangladesh, passionate about Full Stack development. 
                         <br /><br />
                         My focus is on building scalable, high-performance web solutions that align with user needs and business goals. With a commitment to accessibility, responsiveness, and clean code, I aim to create engaging digital experiences that deliver measurable impact.
@@ -170,7 +170,7 @@ function BasicHome(props) {
                 </div>
             </div>
             <div
-                className='min-w-100 lg:min-w-200 border-t-1 border-zinc-200 py-10
+                className='min-w-80 lg:min-w-200 border-t-1 border-zinc-200 py-10
                         grid gap-4 px-5'
                 id='FrameThree'
             >
@@ -182,7 +182,7 @@ function BasicHome(props) {
                 </div>
             </div>
             {/* <div
-                className='min-w-100 lg:min-w-200 border-t-1 border-zinc-200 py-10
+                className='min-w-80 lg:min-w-200 border-t-1 border-zinc-200 py-10
                         grid lg:grid-cols-2 gap-4 px-5'
                 id='FrameFour'
             >
