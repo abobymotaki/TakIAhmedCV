@@ -1,72 +1,143 @@
 {
-    "list": [
+  "list": [
+    {
+      "company": "Qasr Al Zumurud",
+      "position": "Fullstack Software Developer",
+      "priority": 1,
+      "joinYear": "2024",
+      "joinMonth": "Oct",
+      "leaveYear": null,
+      "leaveMonth": null,
+      "projects": [
         {
-            "company": "Qasr Al Zumurud",
-            "position": "Fullstack Software Developer",
-            "priority": 1,
-            "joinYear": "2024",
-            "joinMonth": "Oct",
-            "leaveYear": null,
-            "leaveMonth": null,
-            "projects": [
-                {
-                    "name": "Website",
-                    "feats": [
-                        {
-                            "paragraph": "I was responsible for compiling all the content provided, to make a website for the company. Currently, I’m responsible for maintaining the website based on instructions provided by the company"
-                        },
-                        {
-                            "paragraph": "Achieved a fully functional website with all the details a website should contain"
-                        }
-                    ],
-                    "languages": [
-                        {
-                            "language": "WordPress"
-                        },
-                        {
-                            "language": "Hostinger"
-                        }
-                    ],
-                    "link": "https://qasralzumurud.com",
-                    "image": "/assets/qasralzumurud.png"
-                },
-                {
-                    "name": "Company Documents Manager",
-                    "feats": [
-                        {
-                            "paragraph": "I was responsible for building a complete Document management system for performing CRUD operations for Quotations, Invoices and Expense Receipts. Each document was then required to be converted to PDF based on data input."
-                        },
-                        {
-                            "paragraph": "Achieved 100% transformation towards online document storage and management for the company. All documents, since April 2025 have been stored in the developed Document management system."
-                        }
-                    ],
-                    "languages": [
-                        {
-                            "language": "Vue.js"
-                        },
-                        {
-                            "language": "Javascript"
-                        },
-                        {
-                            "language": "Tailwind"
-                        },
-                        {
-                            "language": "Axios"
-                        },
-                        {
-                            "language": "Supabase"
-                        },
-                        {
-                            "language": "Pinia"
-                        },
-                        {
-                            "language": "HTML2PDF.js"
-                        }
-                    ],
-                    "link": null,
-                    "image": "/assets/invoiceManager.png"
-                }
-            ]
+          "name": "Website",
+          "feats": [
+            {
+              "paragraph": "I was responsible for compiling all the content provided, to make a website for the company. Currently, I’m responsible for maintaining the website based on instructions provided by the company"
+            },
+            {
+              "paragraph": "Achieved a fully functional website with all the details a website should contain"
+            }
+          ],
+          "languages": [
+            {
+              "language": "WordPress"
+            },
+            {
+              "language": "Hostinger"
+            }
+          ],
+          "link": "https://qasralzumurud.com",
+          "image": "/assets/qasralzumurud.png"
+        },
+        {
+          "name": "Company Documents Manager",
+          "feats": [
+            {
+              "paragraph": "I was responsible for building a complete Document management system for performing CRUD operations for Quotations, Invoices and Expense Receipts. Each document was then required to be converted to PDF based on data input."
+            },
+            {
+              "paragraph": "Achieved 100% transformation towards online document storage and management for the company. All documents, since April 2025 have been stored in the developed Document management system."
+            }
+          ],
+          "languages": [
+            {
+              "language": "Vue.js"
+            },
+            {
+              "language": "Javascript"
+            },
+            {
+              "language": "Tailwind"
+            },
+            {
+              "language": "Axios"
+            },
+            {
+              "language": "Supabase"
+            },
+            {
+              "language": "Pinia"
+            },
+            {
+              "language": "HTML2PDF.js"
+            }
+          ],
+          "link": null,
+          "image": "/assets/invoiceManager.png"
+        },
+        {
+          "name": "Invoice",
+          "feats": [
+            {
+              "paragraph": "I was responsible for building a complete Document management system for performing CRUD operations for Quotations, Invoices and Expense Receipts. Each document was then required to be converted to PDF based on data input."
+            },
+            {
+              "paragraph": "Achieved 100% transformation towards online document storage and management for the company. All documents, since April 2025 have been stored in the developed Document management system."
+            }
+          ],
+          "languages": [
+            {
+              "language": "Vue.js"
+            },
+            {
+              "language": "Javascript"
+            },
+            {
+              "language": "Tailwind"
+            },
+            {
+              "language": "Axios"
+            },
+            {
+              "language": "Supabase"
+            },
+            {
+              "language": "Pinia"
+            },
+            {
+              "language": "HTML2PDF.js"
+            }
+          ],
+          "link": null,
+          "image": null
         }
-    ]
+      ]
+    },
+    {
+      "company": "Elore & Co",
+      "position": "Freelancer",
+      "priority": 1,
+      "joinYear": "2025",
+      "joinMonth": "Aug",
+      "leaveYear": null,
+      "leaveMonth": null,
+      "projects": [
+        {
+          "name": "Website",
+          "feats": [
+            {
+              "paragraph": "I was responsible for working in a team alongside another person to gather images, details and requirements for the website, and build it from scratch"
+            },
+            {
+              "paragraph": "All requirements to display the services were met and an additional Insights page was implemented to give insights on business in UAE"
+            }
+          ],
+          "languages": [
+            {
+              "language": "Vue.js"
+            },
+            {
+              "language": "TailwindCSS"
+            },
+            {
+              "language": "FontAwesome"
+            }
+          ],
+          "link": "https://elore-and-co.vercel.app",
+          "image": "../../src/assets/elore-and-co.png"
+        }
+      ]
+    }
+  ]
 }

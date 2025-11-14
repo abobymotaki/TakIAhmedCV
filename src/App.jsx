@@ -14,7 +14,7 @@ function MainContent() {
         style === 'basic' ? '' : 'bg-zinc-950'
       }`}
     >
-      <div className="max-w-[1440px] overflow-auto">
+      <div className="max-w-[1440px]">
         <Router>
           <Header />
           <Routes>

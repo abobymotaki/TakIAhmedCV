@@ -1,5 +1,6 @@
 import { useState } from "react";
 import languages from "../data/languages.json";
+import projects from '../data/projects.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as brandIcons from "@fortawesome/free-brands-svg-icons";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons"; // Fallback icon
@@ -39,6 +40,7 @@ const getIcon = (iconArray) => {
 function AdvancedHome(props) {
   const [languagesList] = useState(languages.list);
   const [experiencesList] = useState(experiences.list);
+    const [projectsList] = useState(projects.list);
 
   const skills = languagesList.map((items, index) => {
     const icon = getIcon(items.icon);
@@ -161,11 +163,13 @@ function AdvancedHome(props) {
                     ) : null}
                   </div>
                   <div className="">
+                    { project.image != null ? (
                     <img
                       src={imageMap[project.image] || project.image}
                       alt={project.name}
                       className="rounded-md"
                     />
+                  ) : null}
                   </div>
                 </div>
               </button>
@@ -176,6 +180,59 @@ function AdvancedHome(props) {
     );
   });
 
+  const project = projectsList.map((project, index) => {
+      // State to track which project is expanded
+      const [openProjectIndex, setOpenProjectIndex] = useState(null);
+
+      // Function to toggle dropdown
+      const toggleProject = (projectIndex) => {
+          setOpenProjectIndex(openProjectIndex === projectIndex ? null : projectIndex);
+          console.log(openProjectIndex);
+      };
+
+      return (
+          <div key={index} className={` ${openProjectIndex === index ? 'mb-8' : 'mb-4'}`}>
+              <button className={`cursor-pointer flex flex-col w-full`} onClick={() => toggleProject(index)}>
+                  <h1 className={`text-2xl font-bold italic text-left`}>{ project.name }</h1>
+                  <p className={`text-left`}>{ project.description }</p>
+              </button>
+              <div className={`${openProjectIndex === index ? 'max-h-200' : 'max-h-0'} overflow-hidden transition-all ease-in-out duration-300`}>
+                  <hr className={`my-4 border-zinc-800`} />
+                  <div className={`grid lg:grid-cols-2 transition-all ease-in-out duration-300 gap-2 lg:gap-4`}>
+                      <div>
+                          <h1 className={`text-lg underline`}>Features</h1>
+                          <ul>
+                              { project.features.map((feature, index) => (
+                                  <li key={index} className={`before:content-['❂']`}> <b>{ feature.title }</b> - { feature.content }</li>
+                              )) }
+                          </ul>
+
+                          { project.futurePlans != null ? (
+                                  <div className='my-5'>
+                                      <h1 className='text-lg underline'>Future Development Plans</h1>
+                                      <ul>
+                                          { project.futurePlans.map((plan, index) => (
+                                              <li key={index} className={`before:content-['❂']`}> <b>{ plan.title }</b> - { plan.content }</li>
+                                          ))}
+                                      </ul>
+                                  </div>
+                              ) :
+                                  null
+                          }
+                          { project.link != null && 
+                              <a href={project.link} target='_blank' className={`bg-blue-800 text-white rounded-sm py-2 block text-center mt-2`}>Visit Site</a>
+                          }
+                      </div>
+                      <div className={`${openProjectIndex === index ? 'max-h-200' : 'max-h-0'} overflow-hidden transition-all ease-in-out duration-300 rounded-md`}>
+                          <img src={project.image} alt="" />
+                      </div>
+                  </div>
+                  <hr className={`my-4 border-zinc-700`} />
+              </div>
+          </div>
+      )
+  });
+  
   return (
     <div
       className={`
@@ -235,15 +292,16 @@ function AdvancedHome(props) {
           <div className="">{experience}</div>
         </div>
       </div>
-      {/* <div
+      <div
         className="lg:min-w-200 border-t-1 border-zinc-800 py-10
-                  grid lg:grid-cols-2 gap-4 px-5"
+                  grid px-5"
         id="FrameFourAdvanced"
       >
-        <div className="z-100">
-          <h1 className="text-xl font-bold mb-4">Projects</h1>
+        <div className="z-100 bg-zinc-950/40 backdrop-blur-md p-5 px-3 lg:px-10 rounded-xl h-full">
+          <h1 className="text-xl font-bold mb-4 ">Projects</h1>
+          <div className="">{ project }</div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,26 @@
+{
+    "list": [
+        {
+            "name": "Enderwork",
+            "description": "An all-in-one configuration helping tool for Game Developers",
+            "features": [
+                {
+                    "title": "Template Replacer",
+                    "content": "Allows configurators to use templates to create thousands of substitutes in an excel like interface."
+                },
+                {
+                    "title": "Calculator Model",
+                    "content": "Multiple Calculators are implemented to solve simple calculation problems regarding arithmetic sequencing and sum of arithmetic sequences to evaluate the economic expenditure for game systems."
+                }
+            ],
+            "futurePlans": [
+                {
+                    "title": "Calculator Model",
+                    "content": "Multiple Calculators are implemented to solve simple calculation problems regarding arithmetic sequencing and sum of arithmetic sequences to evaluate the economic expenditure for game systems."
+                }
+            ],
+            "link": "https://enderwork.com",
+            "image": "../../src/assets/enderwork.png"
+        }
+    ]
+}

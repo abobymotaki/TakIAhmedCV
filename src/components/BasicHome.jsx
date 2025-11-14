@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import languages from '../data/languages.json';
+import projects from '../data/projects.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as brandIcons from '@fortawesome/free-brands-svg-icons';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'; // Fallback icon
 import experiences from '../data/experience.json';
 import qasrImage from '../assets/qasralzumurud.png';
 import invoiceImg from '../assets/invoiceManager.png';
+import { replace } from 'react-router-dom';
 
 const imageMap = {
   '/assets/qasralzumurud.png': qasrImage,
@@ -36,6 +38,7 @@ function BasicHome(props) {
 
     const [languagesList] = useState(languages.list);
     const [experiencesList] = useState(experiences.list);
+    const [projectsList] = useState(projects.list);
 
     const skills = languagesList.map((items, index) => {
         const icon = getIcon(items.icon);
@@ -77,14 +80,14 @@ function BasicHome(props) {
                 
                 <div className=''>
                     {items.projects.map((project, projectIndex) => (
-                        <div key={projectIndex} className='mb-2'>
+                        <div key={projectIndex}>
                             <button
-                                className={`lg:-ml-3 w-full text-left font-bold text-zinc-600 flex flex-col items-center py-2
-                                        ${openProjectIndex === projectIndex ? 'border px-3 rounded-lg shadow-md' : 'px-3'}
+                                className={`lg:-ml-3 w-full text-left font-bold text-zinc-600 flex flex-col items-center transition-transform ease-in-out duration-300
+                                        ${openProjectIndex === projectIndex ? 'border px-3 rounded-lg shadow-md mb-4 py-2' : 'px-3'}
                                     `}
                             >
                                 <div className='text-lg font-bold flex justify-between w-full -mt-1 cursor-pointer'
-                                    onClick={() => toggleProject(projectIndex)}
+                                    onClick={() => {toggleProject(projectIndex)}}
                                 >
                                     {project.name}
                                     <span>{openProjectIndex === projectIndex ? '▴' : '▾'}</span>
@@ -95,7 +98,7 @@ function BasicHome(props) {
                                         <div className=''>
                                             { project.feats.map((feat, index) => (
                                                 <div key={index} className='flex gap-x-2 py-2'>
-                                                    <span className=''>✱</span><span>{feat.paragraph}</span>
+                                                    <span className=''>✱</span><span className="text-justify">{feat.paragraph}</span>
                                                 </div>
                                             )) }
 
@@ -119,8 +122,13 @@ function BasicHome(props) {
                                         }
                                     </div>
                                     <div className=''>
-                                        <img src={imageMap[project.image] || project.image} alt={project.name} 
-                                            className='rounded-md' />
+                                        { project.image != null ? (
+                                            <img
+                                                src={imageMap[project.image] || project.image}
+                                                alt={project.name}
+                                                className="rounded-md"
+                                            />
+                                        ) : null}
                                     </div>
                                 </div>
                             </button>
@@ -129,6 +137,58 @@ function BasicHome(props) {
                 </div>
             </div>
         );
+    });
+
+    const project = projectsList.map((project, index) => {
+        // State to track which project is expanded
+        const [openProjectIndex, setOpenProjectIndex] = useState(null);
+
+        // Function to toggle dropdown
+        const toggleProject = (projectIndex) => {
+            setOpenProjectIndex(openProjectIndex === projectIndex ? null : projectIndex);
+        };
+
+        return (
+            <div key={index} className={` ${openProjectIndex === index ? 'mb-8' : 'mb-4'}`}>
+                <button className={`cursor-pointer flex flex-col w-full`} onClick={() => toggleProject(index)}>
+                    <h1 className={`text-2xl font-bold italic text-left`}>{ project.name }</h1>
+                    <p className={`text-left`}>{ project.description }</p>
+                </button>
+                <div className={`${openProjectIndex === index ? 'max-h-200' : 'max-h-0'} overflow-hidden transition-all ease-in-out duration-300`}>
+                    <hr className={`my-4 border-zinc-200`} />
+                    <div className={`grid lg:grid-cols-2 transition-all ease-in-out duration-300 gap-2 lg:gap-4`}>
+                        <div>
+                            <h1 className={`text-lg underline`}>Features</h1>
+                            <ul>
+                                { project.features.map((feature, index) => (
+                                    <li key={index} className={`before:content-['❂']`}> <b>{ feature.title }</b> - { feature.content }</li>
+                                )) }
+                            </ul>
+
+                            { project.futurePlans != null ? (
+                                    <div className='my-5'>
+                                        <h1 className='text-lg underline'>Future Development Plans</h1>
+                                        <ul>
+                                            { project.futurePlans.map((plan, index) => (
+                                                <li key={index} className={`before:content-['❂']`}> <b>{ plan.title }</b> - { plan.content }</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ) :
+                                    null
+                            }
+                            { project.link != null && 
+                                <a href={project.link} target='_blank' className={`bg-black text-white rounded-sm py-2 block text-center mt-2`}>Visit Site</a>
+                            }
+                        </div>
+                        <div className={`${openProjectIndex === index ? 'max-h-200' : 'max-h-0'} overflow-hidden transition-all ease-in-out duration-300 rounded-md`}>
+                            <img src={project.image} alt="" />
+                        </div>
+                    </div>
+                    <hr className={`my-4 border-zinc-200`} />
+                </div>
+            </div>
+        )
     });
   
     return (
@@ -175,21 +235,24 @@ function BasicHome(props) {
                 id='FrameThree'
             >
                 <div className=''>
-                    <h1 className='text-xl font-bold mb-4'>Experience</h1>
+                    <h1 className='text-xl font-bold mb-2'>Experience</h1>
                     <div className=''>
                         {experience}
                     </div>
                 </div>
             </div>
-            {/* <div
+            <div
                 className='min-w-80 lg:min-w-200 border-t-1 border-zinc-200 py-10
-                        grid lg:grid-cols-2 gap-4 px-5'
+                        grid gap-4 px-5'
                 id='FrameFour'
             >
                 <div>
-                    <h1 className='text-xl font-bold mb-4'>Projects</h1>
+                    <h1 className='text-xl font-bold mb-2'>Projects</h1>
+                    <div>
+                        {project}
+                    </div>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
